@@ -13,7 +13,7 @@ const fs = require('fs');
 // Arreglo con los posibles nombres de departamento
 const DEPARTAMENTOS = ['Ventas', 'TI', 'RRHH', 'Finanzas', 'Marketing'];
 // Cantidad total de registros a generar
-const REGISTROS = 1500;  // cambia este valor según lo necesario
+const REGISTROS = 15000;  // cambia este valor según lo necesario
 // Crea un stream de escritura hacia el archivo empleados.csv usando codificación UTF-8
 const file = fs.createWriteStream('empleados.csv', { encoding: 'utf8' });
 
