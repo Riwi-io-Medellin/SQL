@@ -1,0 +1,41 @@
+# --- General ---
+# Dependency directories
+node_modules/
+venv/
+.env/
+
+# Logs & debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Build outputs / coverage
+/dist/
+/build/
+/coverage/
+*.tgz
+
+# Compiled files
+*.pyc
+__pycache__/
+
+# dotenv files
+*.env
+*.env.*
+
+# MySQL dumps or large data files
+databases/*.sql
+*.csv
+
+# Ignore generated CSV specifically
+epleados.csv
+
+# Misc
+*.swp
