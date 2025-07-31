@@ -8,7 +8,8 @@ Bienvenido al repositorio del **SQL** impartido en RIWI Medellín. Aquí encontr
 
 | Carpeta / Archivo | Descripción |
 |-------------------|-------------|
-| `teoria_sql.md`   | Apuntes detallados con la teoría del curso: conceptos de bases de datos, sentencias DDL y DML, funciones de agregación, joins, sub-consultas, buenas prácticas, etc. |
+| `teoria/`         | **Nueva estructura organizada**: Teoría fragmentada en 7 módulos temáticos para mejor organización y consulta específica. Incluye ejemplos en MySQL y PostgreSQL con código completamente comentado. |
+| `teoria_sql.md`   | Archivo original con toda la teoría (mantenido como referencia). |
 | `ejercicios/`     | Colección de ejercicios guiados y retos para practicar cada módulo. Cada archivo `.md` contiene enunciados y, en algunos casos, las soluciones comentadas. |
 | `README.md`       | Este archivo: guía rápida del proyecto, cómo usarlo y cómo contribuir. |
 
@@ -32,7 +33,8 @@ Bienvenido al repositorio del **SQL** impartido en RIWI Medellín. Aquí encontr
    cd SQL
    ```
 2. **Consulta de teoría**
-   Abre `teoria_sql.md` en tu editor o visor Markdown preferido y navega por los índices de temas.
+   - **Estructura nueva (recomendada)**: Ve a la carpeta `teoria/` y consulta el [índice organizado](./teoria/README.md) por módulos temáticos
+   - **Archivo original**: Abre `teoria_sql.md` para consultar toda la teoría en un solo archivo
 3. **Resolución de ejercicios**
    Ve a la carpeta `ejercicios/`, lee el archivo correspondiente al tema y ejecuta las sentencias en tu gestor de bases de datos. Al finalizar, compara tus resultados con las soluciones propuestas.
 4. **Progreso personal**
