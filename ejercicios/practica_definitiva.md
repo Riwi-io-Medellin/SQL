@@ -35,6 +35,18 @@ Actualmente, muchos usuarios han venido usando plantillas de Excel desordenadas 
 - Inserta los datos normalizados en la base de datos.
 - Puede ser una base de datos relacional (PostgreSQL, MySQL) o NoSQL (MongoDB), según prefieras.
 
+#### 5. **Sistema de Analytics y Reportes Avanzados**
+
+- Implementa consultas SQL complejas para generar estadísticas de progreso del usuario.
+- Crea reportes dinámicos con métricas como:
+  - Progreso semanal/mensual por tipo de actividad
+  - Comparativas entre períodos (mes actual vs anterior)
+  - Identificación de patrones y tendencias usando funciones de ventana (ROW_NUMBER, RANK, LAG/LEAD)
+  - Top 5 actividades más frecuentes y menos frecuentes
+- Implementa al menos 3 vistas materializadas o procedimientos almacenados para optimizar consultas frecuentes.
+- Genera gráficos básicos en el frontend usando Chart.js o similar para visualizar los datos.
+- Incluye filtros por rango de fechas, tipo de actividad y usuario.
+
 ---
 
 ###  Extra 
@@ -50,6 +62,7 @@ Actualmente, muchos usuarios han venido usando plantillas de Excel desordenadas 
 | CRUD                    | Implementado al menos para 2 entidades con relaciones y validaciones.          |
 | Importación de Excel    | Muestra errores si hay datos malos y persiste los datos correctamente.         |
 | Autenticación           | Contraseñas hasheadas y acceso limitado a funciones de administración.         |
+| Analytics y Reportes    | Consultas SQL complejas, vistas/procedimientos, gráficos y filtros funcionales. |
 | Organización del código | Separación por responsabilidad, código comentado y legible.                    |
 | Documentación           | README claro con instrucciones y estructura del repo organizada.               |
 
