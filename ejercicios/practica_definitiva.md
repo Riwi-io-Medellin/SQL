@@ -1,11 +1,3 @@
----
-
-**Prueba de Desempeño Alternativa – Módulo 4**
-
-*Tema: Bases de Datos SQL y NoSQL*
-
----
-
 ### Caso de uso:
 
 Eres parte del equipo de desarrollo de una startup que busca revolucionar el manejo de datos en el mundo del bienestar y la productividad. Como primer producto, se quiere construir una plataforma que permita a los usuarios llevar un registro completo y estructurado de sus actividades, ya sea de gimnasio, meditación, lectura, caminatas u otros hábitos saludables o cualquier idea que desees trabajar.
