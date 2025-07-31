@@ -37,8 +37,7 @@ Actualmente, muchos usuarios han venido usando plantillas de Excel desordenadas 
 
 ---
 
-### Puntos Extra (+5 max sin pasar de 100)
-
+###  Extra 
 - Crear una colección POSTMAN que permita probar las rutas de la API sin usar la interfaz gráfica.
 
 ---
