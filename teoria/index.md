@@ -67,6 +67,37 @@
 - Procedimientos almacenados y triggers
 - Backup, recuperación y mantenimiento
 
+### [08 - Bases de Datos No Relacionales (NoSQL)](./08-nosql-no-relacionales.md)
+**Más allá de SQL: el mundo de las bases de datos NoSQL**
+- Introducción a NoSQL y sus ventajas
+- Tipos de bases de datos no relacionales:
+  - Documentos (MongoDB, CouchDB)
+  - Clave-Valor (Redis, DynamoDB)
+  - Columnas (Cassandra, HBase)
+  - Grafos (Neo4j, Neptune)
+- **MongoDB en profundidad**:
+  - Modelo de documentos y BSON
+  - Operaciones CRUD y consultas
+  - Agregación y pipeline
+  - Índices y optimización
+- Cuándo usar NoSQL vs SQL
+- Casos de uso reales: e-commerce, logs, redes sociales
+
+### [09 - Instalación de MongoDB y Atlas](./09-instalacion-mongodb-atlas.md)
+**Guía práctica paso a paso para comenzar con MongoDB**
+- **Instalación en Ubuntu**:
+  - Configuración de repositorios y dependencias
+  - Instalación de MongoDB Community Edition
+  - Configuración como servicio del sistema
+  - Configuración básica de seguridad
+- **MongoDB Atlas (Cloud)**:
+  - Creación de cuenta y primer cluster gratuito
+  - Configuración de usuarios y acceso de red
+  - Conexión desde terminal y MongoDB Compass
+  - Monitoreo y administración en la nube
+- Comparación Local vs Atlas
+- Ejercicios prácticos y comandos de referencia
+
 ## Características Especiales
 
 ### Ejemplos Duales: MySQL y PostgreSQL
