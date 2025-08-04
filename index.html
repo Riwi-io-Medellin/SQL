@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD básico con Supabase (REST API)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 700px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem; }
+    th { background: #f5f5f5; }
+    button { margin-right: 0.25rem; }
+  </style>
+</head>
+<body>
+  <h1>CRUD básico con Supabase (REST API nativa)</h1>
+
+  <form id="item-form">
+    <input type="text" id="item-name" placeholder="Nuevo ítem" required />
+    <button type="submit">Crear</button>
+  </form>
+
+  <table id="items-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    // === Configuración ===
+    const tableName = 'items';
+    const baseUrl   = 'https://nplgifhzzbgkjuvnmmsl.supabase.co';   // <- Cambia por tu URL
+    const anonKey   = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wbGdpZmh6emJna2p1dm5tbXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4MDI4OTQsImV4cCI6MjA2OTM3ODg5NH0.n2ye_4wcfkITAvcl8I3jY7CYv0LvdZ5nuVnlzJupkNE';
+
+
+    // Helper genérico para hacer peticiones fetch a la REST API
+    async function supabaseFetch(path, { method = 'GET', body = null, params = '' } = {}) {
+      const url = `${baseUrl}/rest/v1/${path}${params}`;
+      const hdrs = {
+        'Content-Type'   : 'application/json',
+        'apikey'         : anonKey,
+        'Authorization'  : `Bearer ${anonKey}`,
+      };
+      if (method === 'POST' || method === 'PATCH') hdrs['Prefer'] = 'return=representation';
+      const res = await fetch(url, { method, headers: hdrs, body: body ? JSON.stringify(body) : null });
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    }
+
+    // === Referencias DOM ===
+    const tbody = document.querySelector('#items-table tbody');
+    const form  = document.getElementById('item-form');
+    const input = document.getElementById('item-name');
+
+    // === CRUD ===
+    async function loadItems() {
+      const data = await supabaseFetch(`${tableName}`); // GET all
+      tbody.innerHTML = '';
+      data.forEach(renderRow);
+    }
+
+    async function createItem(name) {
+      const [item] = await supabaseFetch(`${tableName}`, { method: 'POST', body: { name } });
+      return item; // devuelve el registro nuevo
+    }
+
+    async function updateItem(id, name) {
+      const [item] = await supabaseFetch(`${tableName}?id=eq.${id}`, { method: 'PATCH', body: { name } });
+      return item;
+    }
+
+    async function deleteItem(id) {
+      await supabaseFetch(`${tableName}?id=eq.${id}`, { method: 'DELETE' });
+    }
+
+    // === UI helpers ===
+    function renderRow(item) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>
+          <button data-action="edit"   data-id="${item.id}" data-name="${item.name}">Editar</button>
+          <button data-action="delete" data-id="${item.id}">Eliminar</button>
+        </td>`;
+      tbody.appendChild(tr);
+    }
+
+    // Crear
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      try {
+        const item = await createItem(input.value);
+        renderRow(item);
+        input.value = '';
+      } catch (err) { alert(err.message); }
+    });
+
+    // Editar / Eliminar (delegación)
+    tbody.addEventListener('click', async e => {
+      const btn = e.target;
+      const id  = btn.dataset.id;
+      if (!id) return;
+
+      if (btn.dataset.action === 'delete') {
+        if (!confirm('¿Eliminar ítem?')) return;
+        try {
+          await deleteItem(id);
+          btn.closest('tr').remove();
+        } catch (err) { alert(err.message); }
+      }
+
+      if (btn.dataset.action === 'edit') {
+        const newName = prompt('Nuevo nombre:', btn.dataset.name);
+        if (!newName) return;
+        try {
+          const item = await updateItem(id, newName);
+          btn.closest('tr').children[1].textContent = item.name;
+          btn.dataset.name = item.name;
+        } catch (err) { alert(err.message); }
+      }
+    });
+
+    // Carga inicial
+    loadItems().catch(err => alert(err.message));
+  </script>
+</body>
+</html>
