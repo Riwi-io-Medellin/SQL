@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Usuarios - Frontend Estático con Supabase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD Usuarios con DB</h1>
+
+        <div class="config-info">
+            <strong>📋 Usando backend Express local:</strong><br>
+            Endpoint: <code>http://localhost:3000/users</code> <br>
+            La tabla <code>public.users</code> debe existir y tener las columnas <code>id, username, role, created_at, updated_at</code>.<br>
+        </div>
+
+        <!-- Crear Usuario -->
+        <div class="form-section">
+            <h3>➕ Crear Nuevo Usuario</h3>
+            <input type="text" id="newUsername" placeholder="Nombre de usuario" style="width: 200px;">
+            <select id="newRole" style="width: 150px; padding: 8px; margin: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                <option value="member">Member</option>
+                <option value="admin">Admin</option>
+                <option value="editor">Editor</option>
+            </select>
+            <button class="btn-success" onclick="createUser()">Crear Usuario</button>
+        </div>
+
+        <!-- Lista de Usuarios -->
+        <div class="form-section">
+            <h3>Lista de Usuarios</h3>
+            <button class="btn-primary" onclick="loadUsers()">🔄 Recargar</button>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Creado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="usersBody">
+                    <tr><td colspan="5">Haz clic en "Recargar" para ver los usuarios</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

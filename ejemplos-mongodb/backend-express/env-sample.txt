@@ -1,0 +1,13 @@
+# Configuración de MongoDB
+# Copia este archivo como .env y ajusta los valores según tu configuración
+
+# URI de conexión a MongoDB
+# Para MongoDB local: mongodb://localhost:27017
+# Para MongoDB Atlas: mongodb+srv://usuario:password@cluster.mongodb.net
+MONGO_URI=mongodb://localhost:27017
+
+# Nombre de la base de datos
+DB_NAME=crud_usuarios
+
+# Puerto del servidor Express
+PORT=3000

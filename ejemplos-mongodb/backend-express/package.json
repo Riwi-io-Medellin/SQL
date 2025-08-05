@@ -1,0 +1,27 @@
+{
+  "name": "mongodb-crud-express",
+  "version": "1.0.0",
+  "description": "Ejemplo didáctico de CRUD con Express y MongoDB sin ORM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "crud",
+    "no-orm"
+  ],
+  "author": "Ejemplo Didáctico",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
