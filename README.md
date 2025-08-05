@@ -1,4 +1,38 @@
-# SQL – RIWI Medellín
+# Repositorio de Bases de Datos – SQL y NoSQL
+
+Este repositorio es una guía completa sobre bases de datos, diseñada para estudiantes de RIWI. Abarca desde los fundamentos de las bases de datos relacionales (SQL) hasta conceptos avanzados y una introducción a las bases de datos no relacionales (NoSQL), con un enfoque especial en MongoDB.
+
+## 📚 Teoría
+
+La sección de teoría está organizada en módulos progresivos para facilitar el aprendizaje. Cada archivo `.md` en la carpeta `teoria/` cubre un tema específico en profundidad.
+
+- **SQL (Bases de Datos Relacionales):**
+  - `01-fundamentos.md`: Conceptos básicos, historia y modelos de datos.
+  - `02-ddl-estructura.md`: Comandos de Definición de Datos (CREATE, ALTER, DROP).
+  - `03-dml-manipulacion.md`: Comandos de Manipulación de Datos (INSERT, UPDATE, DELETE, SELECT).
+  - `04-consultas-avanzadas.md`: JOINs, subconsultas y cláusulas complejas.
+  - `05-funciones-agregacion.md`: Funciones como COUNT, SUM, AVG, y agrupamiento.
+  - `06-optimizacion-indices.md`: Índices, vistas y buenas prácticas.
+  - `07-transacciones-control.md`: ACID, concurrencia y control de transacciones.
+
+- **NoSQL (Bases de Datos No Relacionales):**
+  - `08-nosql-no-relacionales.md`: Introducción a NoSQL, tipos de bases de datos y ventajas.
+  - `09-instalacion-mongodb-atlas.md`: Guía paso a paso para configurar un clúster de MongoDB en la nube con Atlas.
+
+## 💻 Ejemplos Prácticos
+
+Esta sección contiene proyectos de backend completos que implementan operaciones CRUD (Crear, Leer, Actualizar, Borrar) utilizando diferentes tecnologías. Cada ejemplo está diseñado para ser consumido por un frontend estático.
+
+- **`examples/javascript-express`**: Un backend clásico construido con **Node.js** y **Express**, utilizando **PostgreSQL** como base de datos relacional.
+- **`examples/python`**: Una alternativa de backend ligera construida con **Python puro** (sin frameworks), que utiliza un archivo **JSON** como sistema de almacenamiento de datos.
+- **`examples/mongodb`**: Una implementación de backend con **Node.js** y **Express**, conectada a una base de datos no relacional **MongoDB**.
+
+## 🚀 Cómo Empezar
+
+1.  **Explora la Teoría**: Navega a la carpeta `/teoria` y comienza a leer los archivos en orden numérico.
+2.  **Analiza los Ejemplos**: Visita la carpeta `/examples` y explora el código fuente de cada implementación de backend. Cada carpeta contiene su propio `README.md` con instrucciones de instalación y uso.
+
+Este repositorio está en constante crecimiento. ¡Siéntete libre de contribuir!
 
 Bienvenido al repositorio del **SQL** impartido en RIWI Medellín. Aquí encontrarás material teórico y práctico para aprender los fundamentos del lenguaje SQL y desarrollar las competencias necesarias para manipular bases de datos relacionales de forma profesional.
 
@@ -39,19 +73,6 @@ Bienvenido al repositorio del **SQL** impartido en RIWI Medellín. Aquí encontr
    Ve a la carpeta `ejercicios/`, lee el archivo correspondiente al tema y ejecuta las sentencias en tu gestor de bases de datos. Al finalizar, compara tus resultados con las soluciones propuestas.
 4. **Progreso personal**
    Marca los ejercicios completados o crea ramas (`git branch`) para guardar tus propias respuestas.
-
----
-
-## Contribuciones
-
-¡Las contribuciones son bienvenidas! Si deseas mejorar el material, corregir errores o añadir nuevos ejercicios:
-
-1. Haz un *fork* del proyecto y crea una nueva rama descriptiva:
-   ```bash
-   git checkout -b mejora-lectura-joins
-   ```
-2. Realiza tus cambios y asegúrate de seguir el estilo Markdown existente.
-3. Abre un *pull request* explicando de forma clara tu aporte.
 
 ---
 

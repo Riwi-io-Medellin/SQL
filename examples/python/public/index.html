@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Usuarios - Python Simple + Postgres</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD con Python Simple + Postgres</h1>
+
+        <div class="config-info">
+            <strong>🐍 Sirviendo con Python Simple:</strong><br>
+            API en <code>/users</code>, Frontend en <code>/</code> <br>
+            Conectado a la tabla <code>public.users</code> en PostgreSQL.<br>
+        </div>
+
+        <!-- Crear Usuario -->
+        <div class="form-section">
+            <h3>➕ Crear Nuevo Usuario</h3>
+            <input type="text" id="newUsername" placeholder="Nombre de usuario" style="width: 200px;">
+            <select id="newRole" style="width: 150px; padding: 8px; margin: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                <option value="member">Member</option>
+                <option value="admin">Admin</option>
+                <option value="editor">Editor</option>
+            </select>
+            <button class="btn-success" onclick="createUser()">Crear Usuario</button>
+        </div>
+
+        <!-- Lista de Usuarios -->
+        <div class="form-section">
+            <h3>Lista de Usuarios</h3>
+            <button class="btn-primary" onclick="loadUsers()">🔄 Recargar</button>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Creado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="usersBody">
+                    <tr><td colspan="5">Haz clic en "Recargar" para ver los usuarios</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -49,11 +49,44 @@ Siga estos pasos para ejecutar el proyecto en su entorno local.
 - **PostgreSQL**: Una instancia local en ejecución.
 - **NPM**: Gestor de paquetes de Node.js (incluido con Node.js).
 
-### 1. Configuración de la Base de Datos
+### 1. Clonar y Configurar el Entorno
+
+Primero, clona el repositorio y navega a la carpeta del proyecto.
+
+```bash
+npm install
+```
+
+Crea un archivo `.env` en la raíz del proyecto, basándote en el archivo `.env.example`. Este archivo contendrá las credenciales de tu base de datos.
+
+```bash
+cp .env.example .env
+```
+
+Ahora, edita el archivo `.env` con tus credenciales de PostgreSQL:
+
+```
+DB_USER=tu_usuario
+DB_HOST=localhost
+DB_DATABASE=tu_base_de_datos
+DB_PASSWORD=tu_contraseña
+DB_PORT=5432
+```
+
+### 2. Configuración de la Base de Datos
 
 Conéctese a su instancia de PostgreSQL y ejecute el siguiente comando SQL para crear la tabla `users` requerida por la aplicación.
 
 ```sql
+A continuación, puedes poblar la tabla con algunos datos de ejemplo:
+
+```sql
+INSERT INTO public.users (username, role) VALUES
+('admin', 'admin'),
+('user1', 'member'),
+('user2', 'member');
+```
+
 CREATE TABLE public.users (
   id SERIAL PRIMARY KEY,
   username TEXT NOT NULL UNIQUE,
@@ -87,12 +120,21 @@ CREATE TABLE public.users (
     DB_PASSWORD=YOUR_POSTGRES_PASSWORD
     ```
 
-4.  **Inicie el servidor**:
-    ```bash
-    node server.js
-    ```
+4.  **Iniciar el Servidor**
 
-    El servidor se ejecutará en `http://localhost:3000`.
+Para iniciar el servidor en modo de desarrollo (se reinicia automáticamente con los cambios), ejecuta:
+
+```bash
+npm run dev
+```
+
+Si prefieres iniciarlo en modo de producción, usa:
+
+```bash
+npm start
+```
+
+El servidor se ejecutará en `http://localhost:3000`.
 
 ### 3. Uso del Frontend
 
