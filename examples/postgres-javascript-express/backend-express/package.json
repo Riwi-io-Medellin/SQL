@@ -1,0 +1,30 @@
+{
+  "name": "supabase-crud-express",
+  "version": "1.0.0",
+  "description": "Ejemplo didáctico de CRUD con Express y Postgres (Supabase) sin ORM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "supabase",
+    "postgres",
+    "express",
+    "crud",
+    "no-orm"
+  ],
+  "author": "Ejemplo Didáctico",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "multer": "^2.0.2",
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,54 @@
+# docker-compose.yml
+# Este archivo define los servicios de base de datos para el entorno de desarrollo.
+# Ejecuta `docker-compose up -d` para iniciar todos los servicios en segundo plano.
+# Ejecuta `docker-compose down` para detener y eliminar los contenedores.
+
+services:
+  # --- Servicio de PostgreSQL ---
+  postgres:
+    image: postgres:15
+    container_name: riwi_postgres_db
+    environment:
+      POSTGRES_USER: riwi
+      POSTGRES_PASSWORD: riwi_password
+      POSTGRES_DB: riwi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # --- Servicio de MySQL ---
+  mysql:
+    image: mysql:8.0
+    container_name: riwi_mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: riwi_db
+      MYSQL_USER: riwi
+      MYSQL_PASSWORD: riwi_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+  # --- Servicio de MongoDB ---
+  mongodb:
+    image: mongo:7.0
+    container_name: riwi_mongo_db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: riwi
+      MONGO_INITDB_ROOT_PASSWORD: riwi_password
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+# --- Volúmenes para persistencia de datos ---
+# Esto asegura que los datos no se pierdan al detener los contenedores.
+volumes:
+  postgres_data:
+  mysql_data:
+  mongo_data:

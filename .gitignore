@@ -32,7 +32,7 @@ __pycache__/
 
 # MySQL dumps or large data files
 databases/*.sql
-*.csv
+# *.csv
 
 # Ignore generated CSV specifically
 epleados.csv

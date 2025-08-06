@@ -127,6 +127,10 @@ Para iniciar el servidor en modo de desarrollo (se reinicia automáticamente con
 ```bash
 npm run dev
 ```
+o
+```bash
+node server.js
+```
 
 Si prefieres iniciarlo en modo de producción, usa:
 

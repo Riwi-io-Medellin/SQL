@@ -1,0 +1,29 @@
+# =====================
+# Configuración Backend Express para Supabase
+# Copia este archivo como .env y usa estos valores reales
+# =====================
+
+# Puerto del servidor Express
+PORT=3000
+
+# Credenciales de conexión a la base de datos Postgres de Supabase
+DB_HOST=aws-0-ap-northeast-1.pooler.supabase.com
+DB_PORT=6543
+DB_NAME=postgres
+DB_USER=postgres.nplgifhzzbgkjuvnmmsl
+DB_PASSWORD=}fGDGJFdsjff++f*s
+
+# DB_HOST=localhost
+# DB_PORT=5432
+# DB_NAME=postgres
+# DB_USER=rails
+# DB_PASSWORD=8iqs3uve
+
+
+
+
+# (Opcional, solo si tu backend necesita acceder a la API REST de Supabase)
+# SUPABASE_URL y SUPABASE_ANON_KEY no son usados por defecto en el backend,
+# pero los dejo aquí por referencia si decides usarlos en el futuro
+SUPABASE_URL=https://nplgifhzzbgkjuvnmmsl.supabase.co
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wbGdpZmh6emJna2p1dm5tbXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4MDI4OTQsImV4cCI6MjA2OTM3ODg5NH0.n2ye_4wcfkITAvcl8I3jY7CYv0LvdZ5nuVnlzJupkNE

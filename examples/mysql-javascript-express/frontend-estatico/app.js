@@ -119,6 +119,42 @@ async function editUser(id, currentUsername, currentRole) {
 }
 // DELETE - Eliminar usuario
 // Pide confirmación y, si acepta, elimina el usuario enviando DELETE al backend
+// UPLOAD - Subir archivo para creación masiva
+// Envía un archivo (CSV o TXT) al backend para crear usuarios masivamente
+async function uploadUsersFile() {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert('Por favor, selecciona un archivo para subir.');
+        return;
+    }
+
+    const formData = new FormData(); // Necesario para enviar archivos
+    formData.append('file', file);
+
+    try {
+        const res = await fetch(`${API_URL}/upload`, {
+            method: 'POST',
+            body: formData // No se necesita 'Content-Type', el navegador lo establece
+        });
+
+        const result = await res.json();
+
+        if (!res.ok) {
+            throw new Error(result.error || 'Error desconocido al subir el archivo');
+        }
+
+        alert(result.message);
+        fileInput.value = ''; // Limpia el input de archivo
+        loadUsers(); // Recarga la lista de usuarios
+    } catch (error) {
+        alert(`Error al subir el archivo: ${error.message}`);
+    }
+}
+
+// DELETE - Eliminar usuario
+// Pide confirmación y, si acepta, elimina el usuario enviando DELETE al backend
 async function deleteUser(id) {
     if (!confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
         return; // Si el usuario cancela, no hace nada
